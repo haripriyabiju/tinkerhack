@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Prediction</title>
+</head>
+<body>
+    <h1>Flood Prediction</h1>
+
+    <form id="floodForm">
+        <label for="rainfall">Rainfall (mm):</label>
+        <input type="number" id="rainfall" name="rainfall" required><br><br>
+
+        <label for="waterlevel">Water Level (meters):</label>
+        <input type="number" id="waterlevel" name="waterlevel" required><br><br>
+
+        <label for="soilSaturation">Soil Saturation (%):</label>
+        <input type="number" id="soilSaturation" name="soilSaturation" required><br><br>
+
+        <button type="submit">Get Prediction</button>
+    </form>
+
+    <h2>Prediction Result:</h2>
+    <p id="predictionResult">Your prediction will appear here.</p>
+
+    <script>
+        // Listen for form submission
+        document.getElementById('floodForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the form from refreshing the page
+
+            // Get values from the form
+            const feature1 = document.getElementById('rainfall').value;
+            const feature2 = document.getElementById('waterlevel').value;
+            const feature3 = document.getElementById('soilSaturation').value;
+
+            // Prepare data to send to the backend
+            const features = [feature1, feature2, feature3];
+
+            // Send a POST request to the Flask API
+            fetch('http://localhost:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ features: features.map(Number) }) // Convert inputs to numbers
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.prediction !== undefined) {
+                    // Display the prediction result
+                    document.getElementById('predictionResult').innerText = `Prediction: ${data.prediction}`;
+                } else if (data.error) {
+                    document.getElementById('predictionResult').innerText = `Error: ${data.error}`;
+                }
+            })
+            .catch(error => {
+                document.getElementById('predictionResult').innerText = `Request failed: ${error}`;
+            });
+        });
+    </script>
+</body>
+</html>
