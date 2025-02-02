@@ -73,9 +73,9 @@ The system then returns a result to the user, displaying either Flood Risk: High
 
 # Project Demo
 # Video
-[Add your demo video link here]
-Explain what the video demonstrates
-
+https://drive.google.com/file/d/1XPZ8yOOufTZjA2RBuPfC0v5W9v64Tpa7/view?usp=drive_link
+the video demonstration of executing a fire alarm system.We are entering the rainfall measurement at particular place. it is then sent to the backend api that decides whether the rainfall level will lead to a flood or not. it the sents back the prediction. However since we couldn't fix some errors, we couldn't generate the correct response
+terig 
 ---
 
 Feel free to replace placeholders with actual information like your college names and project links.
