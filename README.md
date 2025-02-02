@@ -1,99 +1,81 @@
-# [Project Name] 🎯
+Here's an updated version of your project documentation with the information you provided:
 
+---
+
+# Flood Prediction 🎯
 
 ## Basic Details
-### Team Name: [Name]
-
+### Team Name: Team Byteme
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
-
+- Member 1: Lakshmipriya S - [Mar Athanasius College of Engineering]
+- Member 2: Haripriya B - [Mar Athanasius College of Engineering]
 ### Hosted Project Link
-[mention your project hosted project link here]
+[Insert your hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+This project predicts the likelihood of floods based on annual rainfall data, utilizing machine learning to classify flood risk.
 
-### The Problem statement
-[What ridiculous problem are you solving?]
+### The Problem Statement
+Flood prediction is crucial for early warning systems, but accurately predicting when floods will occur based solely on rainfall data is a significant challenge.
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+We solve this by using a Random Forest Classifier, which takes in annual rainfall as the sole feature and predicts whether a flood is likely to occur based on a threshold value.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- *Languages used*: Python
+- *Frameworks used*: Flask (for API), Scikit-learn (for machine learning), Pandas, Numpy
+- *Libraries used*: joblib (for saving models), Flask-CORS
+- *Tools used*: VS Code, Jupyter Notebook
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+bash
+pip install -r requirements.txt
+
 
 # Run
-[commands]
+bash
+python app.py
+
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![image](https://github.com/user-attachments/assets/e359e10a-1dc6-43eb-a5ec-d1019c1d7a1c)
+OUTPUT.
+This is the output interface of a flood warning system that predicts whether there will be a flood based on annual rainfall (in mm). The system takes user input for rainfall, but the displayed error indicates a mismatch in input dimensions. Specifically, the OneHotEncoder expects 2 features, but the system currently provides only 1 feature as input.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![image](https://github.com/user-attachments/assets/9ddbcad1-bdcd-421d-97c4-b852b26fc23d)
+BACKEND
+This is the backend API code for a flood prediction system built with Flask. It loads a pre-trained model (flood_prediction_model.pkl) and an encoder (encoder (1).pkl) to process input data.
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+Routes:
+'/': Serves the HTML frontend.
+'/predict': Handles POST requests for predictions.
+The terminal shows warnings about mismatched input dimensions, as the model expects more features than the frontend provides.
+
+![WhatsApp Image 2025-02-02 at 9 44 53 AM](https://github.com/user-attachments/assets/e014fa7f-e19d-4b65-a498-7243ecf0f838)
+A PICTURE OF OUR MODEL
+I trained my model using a dataset from Kaggle to predict rainfall. After preprocessing—scaling numerical features and splitting the data—I used a regression model for prediction. The model's performance was evaluated using *MSE* and *R² (0.69)*, showing a decent correlation. I also plotted actual vs. predicted values to visualize accuracy.
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![WhatsApp Image 2025-02-02 at 10 06 52 AM](https://github.com/user-attachments/assets/88f313b4-39c4-4b2f-b814-c6a514128bd1)
 
-For Hardware:
+When a user opens the Flood Warning System, they are prompted to enter the rainfall value and click the Predict button. This input is sent to the backend API, where a trained machine learning model analyzes the data and predicts flood risk.  
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+The system then returns a result to the user, displaying either Flood Risk: High ⚠️ if flooding is likely or No Flood Risk ✅" if there is no danger. This ensures quick and data-driven flood warnings.
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Team](Add photo of your team here)
-
-
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
-
-### Project Demo
+# Project Demo
 # Video
 [Add your demo video link here]
-*Explain what the video demonstrates*
-
-# Additional Demos
-[Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+Explain what the video demonstrates
 
 ---
-Made with ❤️ at TinkerHub
+
+Feel free to replace placeholders with actual information like your college names and project links.
